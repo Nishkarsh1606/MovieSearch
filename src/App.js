@@ -26,7 +26,7 @@ const App=()=>{
     
     return(
         <div className='app'>
-            <h1>Netlfix 3.0</h1>
+            <h1>MovieSearch</h1>
             <div className="search">
                 <input type="text" name="" id="" value={searchTerm}
                 onChange={(e)=>setSearchTerm(e.target.value)}
