@@ -10,19 +10,14 @@ const App=()=>{
         searchMovies('spider-man')
     },[])
     const searchMovies=async (title)=>{
-        const response= await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=f364ebcf&s=${title}`)
-        const data=await response.json()
-        setMovies(data.Search)
+        try {
+            const response= await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=f364ebcf&s=${title}`)
+            const data=await response.json()
+            setMovies(data.Search)
+        } catch (e) {
+            console.log(`An error occurred`)
+        }
     }
-
-
-    // const movie={
-    //     "Title": "Spider-Man",
-    //     "Year": "2002",
-    //     "imdbID": "tt0145487",
-    //     "Type": "movie",
-    //     "Poster": "https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg"
-    // }
     
     return(
         <div className='app'>
